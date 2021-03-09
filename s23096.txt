@@ -3,9 +3,11 @@ def base():
     questions = data_manager.import_newest_five("question")
     headers = data_manager.import_headers("question")
     id_question_index = data_manager.SORTING_DICT["question"]["categories_indexes"]["id"]
-    if request.method == 'POST':
+    if request.method == 'DELETE':
         search_phrase = request.form['search_phrase']
         return redirect(url_for('search_question', q=search_phrase))
     else:
         return render_template('base.html', questions=questions, headers=headers,
                                id_question_index=id_question_index)
+
+change change change
