@@ -1,0 +1,8 @@
+@database_common.connection_handler
+def get_mentors(cursor: RealDictCursor) -> list:
+    query = """
+        SELECT first_name, last_name, city
+        FROM mentor
+        ORDER BY first_name"""
+    cursor.execute(query)
+    return cursor.fetchall()
